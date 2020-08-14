@@ -12,33 +12,30 @@ function zeltron(file) {
           let level = [];
           let rank = [];
 
-          srttt = file_data.replace(/(\r\n|\n|\r)/gm,"");
-          srttt = srttt.split(" ").join("");
-
-          let parserer = new DOMParser();
-          let datar = parserer.parseFromString(srttt,"text/xml");
-          var x = datar.getElementsByTagName("name");
+          let xml_parser = new DOMParser();
+          let xml_data = xml_parser.parseFromString(file_data,"text/xml");
+          console.log(xml_data);
+          var x = xml_data.getElementsByTagName("name");
 
           for (let i = 0; i < x.length; i ++) {
-               name[i] = datar.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+               name[i] = xml_data.getElementsByTagName("name")[i].childNodes[0].nodeValue;
           }
 
           for (let j = 0; j < x.length; j ++) {
-               nickname[j] = datar.getElementsByTagName("nickname")[j].childNodes[0].nodeValue;
+               nickname[j] = xml_data.getElementsByTagName("nickname")[j].childNodes[0].nodeValue;
           }
 
           for (let d = 0; d < x.length; d ++) {
-               age[d] = datar.getElementsByTagName("age")[d].childNodes[0].nodeValue;
+               age[d] = xml_data.getElementsByTagName("age")[d].childNodes[0].nodeValue;
           }
 
           for (let a = 0; a < x.length; a ++) {
-               level[a] = datar.getElementsByTagName("level")[a].childNodes[0].nodeValue;
+               level[a] = xml_data.getElementsByTagName("level")[a].childNodes[0].nodeValue;
           }
 
           for (let b = 0; b < x.length; b ++) {
-               rank[b] = datar.getElementsByTagName("rank")[b].childNodes[0].nodeValue;
+               rank[b] = xml_data.getElementsByTagName("rank")[b].childNodes[0].nodeValue;
           }
-          console.log(datar);
           let inner_html = "";
           for (let u = 0; u < x.length; u ++) {
                inner_html = inner_html + '<tr>' + '<td align = "center" class = "input">' + name[u] + '</td>' + '<td align = "center" class = "input">' + nickname[u] + '</td>' + '<td align = "center" class = "input">' + age[u] + '</td>' + '<td align = "center" class = "input">' + level[u] + '</td>' + '<td align = "center" class = "input">' + rank[u] + '</td>' + '</tr>';

